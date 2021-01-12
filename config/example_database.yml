@@ -10,10 +10,10 @@ default: &default
   pool: 5
   database: db_project_manager
   username: root
-  password: Sta260701
+  password: your_password
   host: localhost
   port: 3000
-  socket: /var/run/mysqld/mysqld.sock
+  socket: <mysqld.sock full path>
 
 development:
   <<: *default
