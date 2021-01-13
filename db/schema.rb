@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_12_155209) do
+ActiveRecord::Schema.define(version: 2021_01_13_102422) do
 
   create_table "projects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -19,6 +19,11 @@ ActiveRecord::Schema.define(version: 2021_01_12_155209) do
     t.date "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "projects_teams", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "project_id", null: false
+    t.bigint "team_id", null: false
   end
 
   create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -30,6 +35,10 @@ ActiveRecord::Schema.define(version: 2021_01_12_155209) do
     t.time "estimation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "project_id"
+    t.bigint "user_id"
+    t.index ["project_id"], name: "index_tasks_on_project_id"
+    t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
   create_table "teams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -49,8 +58,12 @@ ActiveRecord::Schema.define(version: 2021_01_12_155209) do
     t.string "first_name"
     t.string "last_name"
     t.boolean "admin"
+    t.bigint "team_id"
+    t.bigint "project_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["project_id"], name: "index_users_on_project_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["team_id"], name: "index_users_on_team_id"
   end
 
 end
