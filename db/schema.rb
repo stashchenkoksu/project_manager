@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_13_102422) do
+ActiveRecord::Schema.define(version: 2021_01_13_193931) do
 
   create_table "projects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.text "summary"
+    t.string "name", default: "", null: false
+    t.string "summary", default: "", null: false
     t.date "start_date"
     t.date "end_date"
     t.datetime "created_at", null: false
@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(version: 2021_01_13_102422) do
   end
 
   create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "title"
-    t.text "content"
+    t.string "title", null: false
+    t.string "content", null: false
     t.string "image"
     t.date "start_date"
     t.string "due_date"
@@ -37,12 +37,13 @@ ActiveRecord::Schema.define(version: 2021_01_13_102422) do
     t.datetime "updated_at", null: false
     t.bigint "project_id"
     t.bigint "user_id"
+    t.string "status"
     t.index ["project_id"], name: "index_tasks_on_project_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
   create_table "teams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
+    t.string "name", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -55,9 +56,9 @@ ActiveRecord::Schema.define(version: 2021_01_13_102422) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "first_name"
-    t.string "last_name"
-    t.boolean "admin"
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.boolean "admin", default: false, null: false
     t.bigint "team_id"
     t.bigint "project_id"
     t.index ["email"], name: "index_users_on_email", unique: true
