@@ -86,7 +86,6 @@ GEM
     erubi (1.10.0)
     execjs (2.7.0)
     ffi (1.14.2)
-    geocoder (1.6.4)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.8.7)
@@ -191,6 +190,9 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    simple_form (5.0.3)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -236,7 +238,6 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
-  geocoder
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   mysql2 (>= 0.4.4, < 0.6.0)
@@ -246,6 +247,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 5.0)
   selenium-webdriver
+  simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
