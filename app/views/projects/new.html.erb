@@ -1,0 +1,8 @@
+<h1>Creating new project</h1>
+
+<%= simple_form_for @project do |f| %>
+    <%= f.input :name, lable: "Project name"%>
+    <%= f.input :summary, lable: "Project description"%>
+    <%= f.input :start_date %>
+    <%= f.button :submit %>
+<%end %>
