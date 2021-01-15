@@ -2,9 +2,5 @@
 
 Amount of projects: <%= @projects.count %>
 <ul>
-  <% @projects.each do |project| %>
-    <li> <%= project.name %> </br>
-          <%= project.summary %>
-    </li>
-  <% end %>
+  <%= render @projects %>
 </ul>
