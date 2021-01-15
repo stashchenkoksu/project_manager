@@ -2,6 +2,7 @@
 <h3>Summary: <%= @project.summary %></h3>
 <h3>Start date: <%= @project.start_date %></h3>
 <h3>End date: <%= @project.end_date %></h3>
+<%= link_to "Show project's tasks", project_tasks_path(@project), :class => 'btn btn-warning' %> </br>
 <%= link_to "Edit", edit_project_path(@project), :class => 'btn btn-warning' %>
 <%= link_to "Delete", project_path(@project), method: :delete, data: {confirm: "Are you sure?"}, :class => 'btn btn-danger' %>
 

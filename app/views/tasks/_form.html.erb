@@ -1,0 +1,12 @@
+<%= simple_form_for [@project, @task] do |f| %>
+  <%=f.input :title %>
+  <%=f.input :content %>
+  <%=f.input :image %>
+  <%=f.input :start_date %>
+  <%=f.input :due_date %>
+  <%=f.input :estimation %>
+  <%=f.input :user_id %>
+  <%=f.input :status %>
+
+  <%= f.button :submit %>
+<%end %>

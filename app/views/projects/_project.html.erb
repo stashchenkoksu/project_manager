@@ -1,7 +1,8 @@
-<li>
-  <%= project.name %> </br>
-  <%= project.summary %> </br>
+<hr>
+ <h4> Name: <%= project.name %></h4>
+  <p>Summary: <%= project.summary %> </p></br>
   <%= project.start_date  %> </br>
   <%= project.end_date %></br>
+  <%= project.id %></br>
   <%= link_to "Learn more", project_path(project)%>
-</li>
+<hr>
