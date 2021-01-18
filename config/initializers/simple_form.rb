@@ -1,4 +1,5 @@
-# frozen_string_literal: true
+# frozen_string_literal: trueRails.application.config.active_record.belongs_to_required_by_default = false
+
 #
 # Uncomment this and change the path if necessary to include your own
 # components.

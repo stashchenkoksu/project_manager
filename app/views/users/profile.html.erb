@@ -1,0 +1,13 @@
+<% if user_signed_in? %>
+  <span>Здравствуйте, <%= current_user.email %></span>
+  <%= @name %> <%= @email %></br>
+  <%= link_to 'Log out', destroy_user_session_path, :method => :delete %>
+  <%= link_to 'Edit profile',  edit_user_registration_path %></br>
+  <%= link_to 'Go to all projects', projects_path%></br>
+  <%= link_to 'Go to all users', sers_path%>
+
+<% else %>
+  <%= link_to 'Sign in', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
+<% end %>
+
+

@@ -4,7 +4,8 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    can :manage, :all
+    can :edit_profile, User, id: user.id
+    can :manage, [Project, Task]
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)

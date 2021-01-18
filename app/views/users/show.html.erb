@@ -1,0 +1,16 @@
+<p>Name: <%= @user.first_name %> <%= @user.last_name %></p>
+<p>Id: <%= @user.id %></p>
+<p>Email: <%= @user.email %></p>
+<p>Team: <%= @user.team_id %></p>
+<%= link_to 'Go to all projects', projects_path%></br>
+<%= link_to 'Go to all users', users_path%></br>
+
+
+<% if can?(:edit_profile, @user) %>
+<% if user_signed_in? %>
+  <%= link_to 'Log out', destroy_user_session_path, :method => :delete %></br>
+  <%= link_to 'Edit profile',  edit_user_registration_path %></br>
+<% else %>
+  <%= link_to 'Sign in', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
+<% end %>
+<% end %>
