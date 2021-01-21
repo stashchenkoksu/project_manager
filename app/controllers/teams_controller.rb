@@ -1,0 +1,42 @@
+class TeamsController < ApplicationController
+  load_and_authorize_resource
+  before_action :set_team_info, only: %i[new edit update create]
+
+  def create
+    @team = Team.new(team_params)
+    if @team.save
+      redirect_to @team
+    else
+      render :new
+    end
+  end
+
+  def update
+    if @team.update(team_params)
+      redirect_to @team
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @team = Team.find(params[:id])
+    @team.destroy
+    redirect_to teams_path
+  end
+
+  def edit; end
+
+  def new; end
+
+  private
+
+  def team_params
+    params.require(:team).permit(:name, user_ids: [], project_ids: [])
+  end
+
+  def set_team_info
+    @users_email = User.all.each_with_object([]) { |user, arr| arr << [user.email, user.id] }
+    @projects_name = Project.all.each_with_object([]) { |project, arr| arr << [project.name, project.id] }
+  end
+end
