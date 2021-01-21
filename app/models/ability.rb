@@ -5,7 +5,7 @@ class Ability
 
   def initialize(user)
     can :edit_profile, User, id: user.id
-    can :manage, [Project, Task]
+    can :manage, [Project, Task, Team]
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)

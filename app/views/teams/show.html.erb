@@ -1,0 +1,19 @@
+<h3>Team name: <%= @team.name %></h3>
+<h5>Team members:</h5>
+<ul>
+  <% @team.users.each do|user| %>
+    <li><%= user.first_name %><%= user.last_name %></br>
+    <%= user.email %>
+    </li>
+  <% end %>
+</ul>
+
+<h5>Team's projects:</h5>
+<ul>
+  <% @team.projects.each do|projects| %>
+    <li><%= projects.name %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Edit", edit_team_path(@team), :class => 'btn btn-warning' %>
+<%= link_to "Delete", team_path(@team), method: :delete, data: {confirm: "Are you sure?"}, :class => 'btn btn-danger' %>

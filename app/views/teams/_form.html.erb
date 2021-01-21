@@ -1,0 +1,6 @@
+<%= simple_form_for @team do |f| %>
+  <%= f.input :name, lable: "Team name"%>
+  <%= f.association :users, collection: @users_email, input_html: { multiple: true }  %>
+  <%= f.association :projects, collection:  @projects_name, input_html: { multiple: true }, as: :check_boxes %>
+  <%= f.button :submit %>
+<%end %>
