@@ -1,5 +1,11 @@
-<li>
-  <p>Name: <%= user.first_name %> <%= user.last_name %></p>
-  <p>Id: <%= user.id %></p>
-  <%= link_to "Show profile", user_path(user) %>
-</li>
+<hr>
+<dl class="row">
+  <dt class="col-1">Name:</dt>
+  <dd class="col-3"><%= user.first_name + " " + user.last_name  %></dd>
+
+  <dt class="col-1">Id:</dt>
+  <dd class="col-3"><%= user.id %></dd>
+
+  <%= link_to "Show profile", user_path(user), :class => "btn btn-outline-secondary btn-sm" %>
+
+</dl>

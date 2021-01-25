@@ -10,11 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_15_124204) do
+ActiveRecord::Schema.define(version: 2021_01_25_104148) do
+
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "commentable_type"
+    t.integer "commentable_id"
+    t.integer "user_id"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "projects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", default: "", null: false
-    t.string "summary", default: "", null: false
+    t.text "summary", null: false
     t.date "start_date"
     t.date "end_date"
     t.datetime "created_at", null: false
@@ -28,7 +37,7 @@ ActiveRecord::Schema.define(version: 2021_01_15_124204) do
 
   create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
-    t.string "content", null: false
+    t.text "content", null: false
     t.string "image"
     t.date "start_date"
     t.date "due_date"

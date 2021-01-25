@@ -1,19 +1,28 @@
-<h3>Team name: <%= @team.name %></h3>
-<h5>Team members:</h5>
-<ul>
-  <% @team.users.each do|user| %>
-    <li><%= user.first_name %><%= user.last_name %></br>
-    <%= user.email %>
-    </li>
-  <% end %>
-</ul>
+<dl class="row">
+  <dt class="col-sm-3">Team name: </dt>
+  <dd class="col-sm-9"><%= @team.name %></dd>
 
-<h5>Team's projects:</h5>
-<ul>
-  <% @team.projects.each do|projects| %>
-    <li><%= projects.name %></li>
-  <% end %>
-</ul>
+  <dt class="col-sm-3">Team id: </dt>
+  <dd class="col-sm-9"><%= @team.id %></dd>
 
-<%= link_to "Edit", edit_team_path(@team), :class => 'btn btn-warning' %>
-<%= link_to "Delete", team_path(@team), method: :delete, data: {confirm: "Are you sure?"}, :class => 'btn btn-danger' %>
+  <dt class="col-sm-3">Team members:</dt>
+  <dd class="col-sm-9">
+    <ol >
+    <% @team_members.each do |member| %>
+      <li> <%= member %> </li>
+    <%end %>
+    </ol>
+  </dd>
+
+  <dt class="col-sm-3">Team projects</dt>
+  <dd class="col-sm-9">
+    <ol>
+    <% @team_projects.each do |project| %>
+      <li> <%= project %> </li>
+    <%end %>
+    </ol>
+  </dd>
+</dl>
+<%= link_to "Edit", edit_team_path(@team), :class => 'btn btn-outline-info btn-sm' %>
+<%= link_to "Delete", team_path(@team), method: :delete, data: {confirm: "Are you sure?"}, :class => 'btn btn-outline-danger btn-sm' %>
+

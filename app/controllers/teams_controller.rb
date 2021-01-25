@@ -19,6 +19,11 @@ class TeamsController < ApplicationController
     end
   end
 
+  def show
+    @team_members = @team.users.map{|user| user = user.first_name + " "+ user.last_name + " - " + user.email }
+    @team_projects = @team.projects.map {|project| project = project.name}
+  end
+
   def destroy
     @team = Team.find(params[:id])
     @team.destroy

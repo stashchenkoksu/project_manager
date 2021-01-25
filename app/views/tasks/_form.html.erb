@@ -1,12 +1,44 @@
-<%= simple_form_for [@project, @task] do |f| %>
-  <%=f.input :title %>
-  <%=f.input :content %>
-  <%=f.input :image %>
-  <%=f.input :start_date %>
-  <%=f.input :due_date %>
-  <%=f.input :estimation %>
-  <%=f.input :user_id %>
-  <%=f.input :status %>
+<div class="form form-group">
+  <%= simple_form_for [@project, @task]  do |f| %>
+    <div class="form-group">
+      <label>Task title </label>
+      <%=f.input :title, class: 'form-control', placeholder: "Title", label: false %>
+    </div>
+    <div class="form-group">
+      <label>Task description</label>
+      <%=f.input :content, as: :text, label: false, class: 'form-control', placeholder: "Description ..." %>
+    </div>
 
-  <%= f.button :submit %>
-<%end %>
+    <div class="form-group">
+      <label>Image</label>
+      <%=f.input :image,label: false, class: 'form-control', placeholder: "Img" %>
+    </div>
+
+    <div class="form-group">
+      <label>Task start date</label>
+      <%=f.input :start_date, label: false, class: 'form-control'%>
+    </div>
+
+    <div class="form-group">
+      <label>Task due date</label>
+      <%=f.input :due_date, label: false, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <label>Task estimation</label>
+      <%=f.input :estimation, label: false, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <label>User id</label>
+      <%=f.input :user_id, label: false, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <label>Status (not started, begin, in progress, done)</label>
+      <%=f.input :status, label: false, class: 'form-control' %>
+    </div>
+
+    <%= f.button :submit, class: 'btn btn-outline-info btn-sm mt-3' %>
+  <% end %>
+</div>

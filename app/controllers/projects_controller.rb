@@ -10,6 +10,9 @@ class ProjectsController < ApplicationController
       render :new
     end
   end
+  def show
+    @project_teams = @project.teams.map{|team| team = team.name}
+  end
 
   def update
     if @project.update(project_params)

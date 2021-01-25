@@ -1,3 +1,5 @@
-<h1>Amount of task on project: <%= @tasks.count %></h1>
+<h2 class="d-flex justify-content-center mt-4 ">Project tasks</h2>
+<p class="d-flex justify-content-center mb-3">Amount of task on project: <%= @tasks.count %></p>
+<%= link_to "Create new task", new_project_task_path(@project,@task), :class =>"btn btn-outline-info btn-sm" %>
+<hr>
 <%= render @tasks  %>
-<%= link_to "Create new task", new_project_task_path(@project,@task), :class => 'btn btn-warning' %>
