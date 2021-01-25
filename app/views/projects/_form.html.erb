@@ -1,8 +1,25 @@
-<%= simple_form_for @project do |f| %>
-  <%= f.input :name, lable: "Project name"%>
-  <%= f.input :summary, lable: "Project description"%>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
+ <div class="form form-group">
+  <%= simple_form_for @project do |f| %>
+    <div class="form-group">
+      <label for="form_project_name">Project name</label>
+      <%= f.input :name, label: false, id: 'form_project_name' ,class: 'form-control', placeholder: "Name" %>
+    </div>
 
-  <%= f.button :submit %>
-<%end %>
+    <div class="form-group">
+      <label for="form_project_description">Project description</label>
+      <%= f.input :summary, as: :text, label: false, id: 'form_project_description', class: 'form-control', placeholder: "Description ..."  %>
+    </div>
+
+    <div class="form-group">
+      <label>Project start date</label>
+      <%= f.input :start_date,label: false, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <label>Project end date</label>
+      <%= f.input :end_date, label: false, class: 'form-control' %>
+    </div>
+
+    <%= f.button :submit, class: 'btn btn-outline-info btn-sm mt-3' %>
+  <% end %>
+ </div>

@@ -1,7 +1,15 @@
-<hr>
-<h1>Title: <%= task.title %></h1>
-<p>Project id: <%= task.project_id %></p>
-<p>User id: <%= task.user_id %></p>
-<p> Task status: <%= task.status %></p>
-  <%= link_to "Learn more", task_path(task)%>
+<dl class="row">
+  <dt class="col-sm-3">Title:</dt>
+  <dd class="col-sm-9"><%= task.title %></dd>
+
+  <dt class="col-sm-3">Project id:</dt>
+  <dd class="col-sm-9"><%= task.project_id %></dd>
+
+  <dt class="col-sm-3">User id: </dt>
+  <dd class="col-sm-9"><%= task.user_id %></dd>
+
+  <dt class="col-sm-3">Task status:</dt>
+  <dd class="col-sm-9"><%= task.status %></dd>
+</dl>
+<%= link_to "Learn more", task_path(task), :class => "btn btn-outline-secondary btn-sm"%>
 <hr>

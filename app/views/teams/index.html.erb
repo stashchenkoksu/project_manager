@@ -1,5 +1,4 @@
-<h1>All teams</h1>
-<%= link_to 'Your profile', user_path(current_user.id)%></br>
-Amount of teams: <%= @teams.count %>
+<h2 class="d-flex justify-content-center mt-4 mb-3">All teams</h2>
+<p class="mb-4">Amount of teams: <%= @teams.count %></p>
+<%= link_to "Create new team", new_team_path(@team),:class =>"btn btn-outline-info btn-sm" %>
 <%= render @teams %>
-<%= link_to "Create new team", new_team_path(@team), :class => 'btn btn-warning' %>

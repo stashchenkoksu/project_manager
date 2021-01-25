@@ -1,3 +1,11 @@
 <hr>
-<h4>Team name: <%= team.name %></h4>
-<%=link_to "learn more", team_path(team) %>
+<dl class="row">
+  <dt class="col-2">Team name:</dt>
+  <dd class="col-3"><%= team.name %></dd>
+
+  <dt class="col-1">Id:</dt>
+  <dd class="col-3"><%= team.id %></dd>
+
+  <%= link_to "Learn more", team_path(team), :class => "btn btn-outline-secondary btn-sm" %>
+
+</dl>

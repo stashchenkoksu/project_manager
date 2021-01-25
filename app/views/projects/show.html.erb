@@ -1,8 +1,31 @@
-<h1>Project: <%= @project.name %></h1>
-<h3>Summary: <%= @project.summary %></h3>
-<h3>Start date: <%= @project.start_date %></h3>
-<h3>End date: <%= @project.end_date %></h3>
-<%= link_to "Show project's tasks", project_tasks_path(@project), :class => 'btn btn-warning' %> </br>
-<%= link_to "Edit", edit_project_path(@project), :class => 'btn btn-warning' %>
-<%= link_to "Delete", project_path(@project), method: :delete, data: {confirm: "Are you sure?"}, :class => 'btn btn-danger' %>
+<dl class="row">
+  <dt class="col-sm-3">Project: </dt>
+  <dd class="col-sm-9"><%= @project.name %></dd>
+
+  <dt class="col-sm-3">Summary: </dt>
+  <dd class="col-sm-9"><%= @project.summary %></dd>
+
+  <dt class="col-sm-3">Project id: </dt>
+  <dd class="col-sm-9"><%= @project.id %></dd>
+
+  <dt class="col-sm-3">Start date:</dt>
+  <dd class="col-sm-9"><%= @project.start_date %></dd>
+
+  <dt class="col-sm-3">End date: </dt>
+  <dd class="col-sm-9"><%= @project.end_date %></dd>
+
+  <dt class="col-sm-3">Start date:</dt>
+  <dd class="col-sm-9"><%= @project.start_date %></dd>
+
+  <dt class="col-sm-3">Project teams:</dt>
+  <dd class="col-sm-9">
+      <% @project_teams.each do |team| %>
+        <p> <%= team %> </p>
+      <%end %>
+  </dd>
+</dl>
+
+<%= link_to "Show project's tasks", project_tasks_path(@project), :class => "btn btn-outline-dark btn-sm mb-3" %> </br>
+<%= link_to "Edit", edit_project_path(@project), :class => 'btn btn-outline-info btn-sm' %>
+<%= link_to "Delete", project_path(@project), method: :delete, data: {confirm: "Are you sure?"}, :class => 'btn btn-outline-danger btn-sm' %>
 

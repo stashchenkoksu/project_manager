@@ -1,6 +1,6 @@
-<h1>All Projects </h1>
-<%= link_to 'Your profile', user_path(current_user.id)%></br>
-<%= link_to 'Manage teams', teams_path%></br>
-Amount of projects: <%= @projects.count %>
+<h2 class="d-flex justify-content-center mt-4 mb-3">All Projects </h2>
+
+<p class="mb-4">Amount of projects: <%= @projects.count %> </p>
+<%= link_to "Create new project", new_project_path(@project), :class =>"btn btn-outline-info btn-sm" %>
+
 <%= render @projects %>
-<%= link_to "Create new project", new_project_path(@project), :class => 'btn btn-warning' %>

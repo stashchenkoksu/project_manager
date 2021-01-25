@@ -1,16 +1,22 @@
-<p>Name: <%= @user.first_name %> <%= @user.last_name %></p>
-<p>Id: <%= @user.id %></p>
-<p>Email: <%= @user.email %></p>
-<p>Team: <%= @user.team_id %></p>
-<%= link_to 'Go to all projects', projects_path%></br>
-<%= link_to 'Go to all users', users_path%></br>
+<dl class="row">
+  <dt class="col-sm-2">Name: </dt>
+  <dd class="col-sm-9"><%= @user.first_name + " " + @user.last_name %></dd>
 
+  <dt class="col-sm-2">Id:</dt>
+  <dd class="col-sm-9"><%= @user.id %></dd>
+
+  <dt class="col-sm-2">Email: </dt>
+  <dd class="col-sm-9"><%= @user.email%></dd>
+
+  <dt class="col-sm-2">Team:</dt>
+  <dd class="col-sm-9"><%= @user.team_id  %></dd>
+</dl>
 
 <% if can?(:edit_profile, @user) %>
-<% if user_signed_in? %>
-  <%= link_to 'Log out', destroy_user_session_path, :method => :delete %></br>
-  <%= link_to 'Edit profile',  edit_user_registration_path %></br>
-<% else %>
-  <%= link_to 'Sign in', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
-<% end %>
+  <% if user_signed_in? %>
+    <%= link_to 'Edit profile',  edit_user_registration_path, :class => 'btn btn-outline-info btn-sm'  %>
+    <%= link_to 'Log out', destroy_user_session_path, :method => :delete, :class => 'btn btn-outline-danger btn-sm' %>
+  <% else %>
+    <%= link_to 'Sign in', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path,  :class => 'btn btn-outline-info btn-sm'  %>
+  <% end %>
 <% end %>

@@ -1,8 +1,10 @@
 <hr>
- <h4> Name: <%= project.name %></h4>
-  <p>Summary: <%= project.summary %> </p></br>
-  <%= project.start_date  %> </br>
-  <%= project.end_date %></br>
-  <%= project.id %></br>
-  <%= link_to "Learn more", project_path(project)%>
-<hr>
+<dl class="row">
+  <dt class="col-sm-2">Project name: </dt>
+  <dd class="col-sm-2"><%=project.name %></dd>
+
+  <dt class="col-sm-1">Id:</dt>
+  <dd class="col-sm-4"><%= project.id%></dd>
+
+  <%= link_to "Learn more", project_path(project), :class => "btn btn-outline-secondary btn-sm"%>
+</dl>
