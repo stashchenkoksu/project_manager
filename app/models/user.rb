@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :tasks
+  has_many :comments
   belongs_to :team, optional: true
   validates :first_name, length: { minimum: 2 }
   validates :last_name, length: { minimum: 2 }

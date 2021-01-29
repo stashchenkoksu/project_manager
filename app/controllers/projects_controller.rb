@@ -34,3 +34,5 @@ class ProjectsController < ApplicationController
     params.require(:project).permit(:name, :summary, :start_date, :end_date)
   end
 end
+
+

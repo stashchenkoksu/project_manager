@@ -3,7 +3,13 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :projects do
-    resources :tasks, shallow: true
+    resources :tasks, shallow: true do
+      resources :comments, module: :tasks
+    end
+    resources :comments, module: :projects
+  end
+  resources :comments do
+    resources :comments
   end
   resources :users
   resources :teams

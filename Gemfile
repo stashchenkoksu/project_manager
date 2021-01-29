@@ -40,6 +40,8 @@ gem 'bootstrap'
 gem 'jquery-rails'
 gem 'popper_js'
 gem 'tether-rails'
+gem "bootstrap_flash_messages", "~> 1.0.1"
+gem 'jquery-ui-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

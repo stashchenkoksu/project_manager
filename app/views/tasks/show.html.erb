@@ -26,3 +26,11 @@
 
 <%= link_to "Edit", edit_task_path(@task), :class => 'btn btn-outline-info btn-sm' %>
 <%= link_to "Delete", task_path(@task), method: :delete, data: {confirm: "Are you sure?"}, :class => 'btn btn-outline-danger btn-sm' %>
+
+<hr>
+<h3 class="mt-4" >Comments</h3>
+<%= render partial: 'comments/form', locals: {commentable: @task} %>
+<ul>
+  <%= render partial: 'comments/comment', locals: {commentable: @task} %>
+</ul>
+

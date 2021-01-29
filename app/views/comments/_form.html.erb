@@ -1,0 +1,6 @@
+<%= simple_form_for [commentable, Comment.new] do |f| %>
+  <div class = "form-group">
+    <%= f.input :body, as: :text, label: false, class: 'form-control', placeholder: "Add a comment"  %>
+  </div>
+  <%= f.button :submit, class: 'btn btn-outline-info btn-sm mt-3' %>
+<% end %>
