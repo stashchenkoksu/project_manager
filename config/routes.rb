@@ -13,7 +13,10 @@ Rails.application.routes.draw do
   end
   resources :users
   resources :teams
-  #get 'users/profile', as: 'user_profile'
+
+  #get ' /comments/:id(.:format)', to: 'tasks/comments', as: 'task_comment'
+
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

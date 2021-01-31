@@ -1,6 +1,8 @@
 <% commentable.comments.each do |comment| %>
   <div class="alert alert-light">
-    <p><strong class = "mr-4"><%= comment.username%></strong><%= link_to "Delete comment", [comment.commentable, comment], method: :delete, data: {confirm: "Are you sure?"}, :class => 'btn btn-outline-danger btn-sm'  %></p>
+   <p><strong class = "mr-4"><%= comment.username%></strong>
+     <%= link_to "Delete comment", [comment.commentable, comment], method: :delete, data: {confirm: "Are you sure?"}, :class => 'btn btn-outline-danger btn-sm'  if comment.user_id == current_user.id && comment.commentable_type == 'Project' %>
+   </p>
 
     <div class="alert border border-dark w-50" style="background-color: #eee;"> <%= comment.body %><br></div>
 

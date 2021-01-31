@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
   def create
     @comment = @commentable.comments.new comment_params
     @comment.username = current_user.first_name + " " + current_user.last_name
+    @comment.user_id = current_user.id
     @comment.save
     if params[:comment_id]
       redirect_back(fallback_location: root_path)
