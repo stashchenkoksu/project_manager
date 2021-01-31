@@ -20,3 +20,10 @@
     <%= link_to 'Sign in', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path,  :class => 'btn btn-outline-info btn-sm'  %>
   <% end %>
 <% end %>
+<hr>
+<h5>Current user's tasks:</h5>
+<ol>
+<%@user.tasks.each do |task| %>
+  <li><%= task.title %></li>
+<% end %>
+</ol>

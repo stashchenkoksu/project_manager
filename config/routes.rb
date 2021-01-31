@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   devise_for :users
   resources :projects do
     resources :tasks, shallow: true do
-      resources :comments, module: :tasks
+      resources :comments
     end
-    resources :comments, module: :projects
+    resources :comments
   end
   resources :comments do
     resources :comments

@@ -1,5 +1,6 @@
 class Task < ApplicationRecord
   belongs_to :project
+  belongs_to :user, optional: true
   has_many :comments, as: :commentable, dependent: :destroy
 
   validates :status, inclusion: { in: ["not started ","begin", "in progress", "done"],

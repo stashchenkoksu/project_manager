@@ -1,7 +1,9 @@
 class TasksController < ApplicationController
   load_and_authorize_resource
-  before_action :find_project, only: [:index, :new, :create]
   before_action :find_task, only: [:show, :edit, :destroy, :update]
+  before_action :find_project, only: [:index, :new, :create]
+
+  before_action :set_team_info, only: %i[new edit update create]
 
   def index
     @tasks = @project.tasks
@@ -35,6 +37,24 @@ class TasksController < ApplicationController
     redirect_to project_tasks_path(pr_id)
   end
 
+  def show
+    @user_email = "No user"
+    unless @task.user_id.nil?
+      user = User.find_by_id(@task.user_id)
+      @user_email = user.first_name + " "+ user.last_name + " - " + user.email
+    end
+
+    project = Project.find_by_id(@task.project_id)
+
+
+    @project_name = project.name
+
+  end
+
+  def edit
+    # code here
+  end
+
   private
 
   def task_params
@@ -47,6 +67,16 @@ class TasksController < ApplicationController
                                     :user_id,
                                     :status
     )
+  end
+
+
+
+  def set_team_info
+    @team_users = []
+    unless @task.project.nil?
+      @task.project.teams.each {|team| @team_users += team.users}
+      @team_users = @team_users.each_with_object([]) { |user, arr| arr << [user.email, user.id] }
+    end
   end
 
   def find_project

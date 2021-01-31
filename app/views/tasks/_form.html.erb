@@ -30,13 +30,13 @@
     </div>
 
     <div class="form-group">
-      <label>User id</label>
-      <%=f.input :user_id, label: false, class: 'form-control' %>
-    </div>
-
-    <div class="form-group">
       <label>Status (not started, begin, in progress, done)</label>
       <%=f.input :status, label: false, class: 'form-control' %>
+    </div>
+
+    <div class="form-group col">
+      <label>Users</label>
+      <%= f.input :user_id, collection:  @team_users, label: false, class: 'form-control'  %>
     </div>
 
     <%= f.button :submit, class: 'btn btn-outline-info btn-sm mt-3' %>

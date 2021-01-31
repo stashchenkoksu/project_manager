@@ -33,10 +33,11 @@ class CommentsController < ApplicationController
     if params[:comment_id]
       @commentable = Comment.find_by_id(params[:comment_id])
     elsif params[:project_id]
-      @commentable = Project.find_by_id(params[:post_id])
+      @commentable = Project.find_by_id(params[:project_id])
     elsif params[:task_id]
       @commentable = Task.find_by_id(params[:task_id])
     end
+
   end
 
   def comment_params
