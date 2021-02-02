@@ -6,7 +6,6 @@ class CreateComments < ActiveRecord::Migration[5.2]
       t.integer :commentable_id
       t.string :username
       t.text :body
-      t.references :parent, foreign_key: true
 
 
       t.timestamps
