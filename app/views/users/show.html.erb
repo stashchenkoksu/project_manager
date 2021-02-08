@@ -22,8 +22,10 @@
 <% end %>
 <hr>
 <h5>Current user's tasks:</h5>
+
 <ol>
-<%@user.tasks.each do |task| %>
+<%@tasks.each do |task| %>
   <li><%= task.title %></li>
 <% end %>
 </ol>
+<%= will_paginate @tasks,  renderer: BootstrapPagination::Rails %>

@@ -1,4 +1,5 @@
 class Task < ApplicationRecord
+  self.per_page = 5
   belongs_to :project
   belongs_to :user, optional: true
   has_many :comments, as: :commentable, dependent: :destroy
