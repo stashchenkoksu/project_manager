@@ -4,6 +4,8 @@ class Task < ApplicationRecord
   belongs_to :user, optional: true
   has_many :comments, as: :commentable, dependent: :destroy
 
+  validates :title, presence: true, length: { minimum: 2}
+  validates :content, presence: true, length: { minimum: 10}
   validates :status, inclusion: { in: ["not started ","begin", "in progress", "done"],
-                                message: "%{value} is not a status(begin, in progress, done)" }, allow_nil: true
+                                message: "it is not a status(not started, begin, in progress, done)" }, allow_nil: true
 end

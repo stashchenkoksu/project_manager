@@ -1,9 +1,9 @@
 class User < ApplicationRecord
   has_many :tasks
-  has_many :comments
   belongs_to :team, optional: true
-  validates :first_name, length: { minimum: 2 }
-  validates :last_name, length: { minimum: 2 }
+  validates :first_name,presence: true,  length: { minimum: 2 }
+  validates :last_name, presence: true, length: { minimum: 2 }
+  validates :admin, presence: true
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
