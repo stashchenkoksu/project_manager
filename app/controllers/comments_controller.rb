@@ -1,10 +1,9 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user!
   before_action :find_commentable
 
   def create
-    @comment = @commentable.comments.new comment_params
-    @comment.username = current_user.first_name + " " + current_user.last_name
+    @comment = @commentable.comments.new(comment_params)
+    @comment.username = current_user.first_name + ' ' + current_user.last_name
     @comment.user_id = current_user.id
     @comment.save
     if params[:comment_id]
@@ -12,8 +11,6 @@ class CommentsController < ApplicationController
     else
       redirect_to @commentable
     end
-
-
   end
 
   def new
@@ -26,9 +23,7 @@ class CommentsController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
 
-
   private
-
   def find_commentable
     if params[:comment_id]
       @commentable = Comment.find_by_id(params[:comment_id])
@@ -41,7 +36,7 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:parent_id, :body)
+    params.require(:comment).permit( :body)
   end
 end
 
