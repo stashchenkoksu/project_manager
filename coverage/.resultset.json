@@ -1,29 +1,45 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/ksusha/Рабочий стол/project_manager/spec/models/user_spec.rb": {
+      "/home/ksusha/Рабочий стол/project_manager/spec/controllers/comments_controller_spec.rb": {
         "lines": [
           1,
           null,
           1,
           1,
+          null,
+          2,
           1,
+          2,
           1,
           null,
           1,
-          1,
+          null,
+          null,
+          null,
           null,
           null,
           null,
           1,
-          1,
-          1,
-          1,
-          1,
+          2,
+          2,
           null,
           1,
+          2,
+          null,
+          null,
+          null,
           1,
+          2,
+          null,
+          2,
+          null,
+          2,
+          null,
           1,
+          2,
+          null,
+          null,
           null,
           null,
           null
@@ -54,7 +70,7 @@
           null,
           null,
           null,
-          null,
+          3,
           null,
           null,
           null,
@@ -97,10 +113,15 @@
           null,
           1,
           1,
+          null,
+          1,
+          1,
           1,
           1,
           null,
           null,
+          null,
+          1,
           null
         ]
       },
@@ -828,6 +849,19 @@
           null
         ]
       },
+      "/home/ksusha/Рабочий стол/project_manager/spec/factories/comments.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
       "/home/ksusha/Рабочий стол/project_manager/spec/factories/project_tasks.rb": {
         "lines": [
           1,
@@ -870,10 +904,10 @@
         "lines": [
           1,
           1,
-          1,
-          1,
-          1,
-          1,
+          3,
+          3,
+          3,
+          3,
           null,
           1,
           1,
@@ -905,7 +939,7 @@
         "lines": [
           1,
           1,
-          1,
+          4,
           null,
           1,
           1,
@@ -935,11 +969,11 @@
         "lines": [
           1,
           1,
-          1,
-          1,
-          1,
-          1,
-          1,
+          4,
+          4,
+          4,
+          4,
+          4,
           1,
           1,
           1,
@@ -963,8 +997,6 @@
           1,
           1,
           1,
-          1,
-          null,
           null,
           null,
           1,
@@ -1040,8 +1072,94 @@
           1,
           null
         ]
+      },
+      "/home/ksusha/Рабочий стол/project_manager/spec/support/controller_macros.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          1,
+          2,
+          2,
+          2,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/ksusha/Рабочий стол/project_manager/app/controllers/comments_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          2,
+          0,
+          2,
+          1,
+          1,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/ksusha/Рабочий стол/project_manager/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null
+        ]
+      },
+      "/home/ksusha/Рабочий стол/project_manager/app/models/comment.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1612867605
+    "timestamp": 1613038375
   }
 }

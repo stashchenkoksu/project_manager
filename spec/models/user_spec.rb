@@ -14,7 +14,6 @@ RSpec.describe User, type: :model do
     it 'has presence validate', :aggregate_failures do
       expect(subject).to validate_presence_of(:first_name)
       expect(subject).to validate_presence_of(:last_name)
-      expect(subject).to validate_presence_of(:admin)
     end
     it 'has length validate', :aggregate_failures do
       expect(subject).to validate_length_of(:first_name).is_at_least(2)
