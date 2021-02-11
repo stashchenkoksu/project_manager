@@ -24,8 +24,12 @@
 <h5>Current user's tasks:</h5>
 
 <ol>
+
+
 <%@tasks.each do |task| %>
-  <li><%= task.title %></li>
+    <li><h5><%= link_to task.title, task_path(task), class: "text-reset" %></h5>
+      <p>Project id: <%= task.project_id %></p>
+    </li>
 <% end %>
 </ol>
 <%= will_paginate @tasks,  renderer: BootstrapPagination::Rails %>
