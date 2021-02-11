@@ -4,12 +4,12 @@ Rails.application.routes.draw do
   devise_for :users
   resources :projects do
     resources :tasks, shallow: true do
-      resources :comments
+      resources :comments, except: [:index]
     end
-    resources :comments
+    resources :comments, except: [:index]
   end
-  resources :comments do
-    resources :comments
+  resources :comments, except: [:index] do
+    resources :comments, except: [:index]
   end
   resources :users
   resources :teams
