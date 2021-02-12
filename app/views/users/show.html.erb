@@ -21,11 +21,13 @@
   <% end %>
 <% end %>
 <hr>
+<%=form_tag( user_path, :method => 'get') do %>
+  <%=text_field_tag :search , params[:search] %>
+  <%= submit_tag "Search" %>
+<%end %>
+
 <h5>Current user's tasks:</h5>
-<form class="input-group col-4  mt-4 mb-4" action="search">
-  <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search">
-  <button type="button" class="btn btn-outline-primary">search</button>
-</form>
+
 <ol>
 <%@tasks.each do |task| %>
     <li><h5><%= link_to task.title, task_path(task), class: "text-reset" %></h5>
