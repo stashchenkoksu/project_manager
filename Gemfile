@@ -37,9 +37,12 @@ gem 'bootstrap'
 gem 'bootstrap_flash_messages', '~> 1.0.1'
 gem 'cancancan'
 gem 'devise'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'popper_js'
+gem 'searchkick'
 gem 'simple_form'
 gem 'tether-rails'
 gem 'will_paginate'
@@ -75,8 +78,8 @@ group :test do
   gem 'shoulda-matchers'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
-  gem 'simplecov', require: false
   gem 'rails-controller-testing'
+  gem 'simplecov', require: false
 
 end
 

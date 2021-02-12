@@ -18,6 +18,12 @@
         <li class="nav-item">
           <%= link_to "Profile", user_path(current_user), class: 'nav-link' if current_user %>
         </li>
+
+        <li class="nav-item">
+          <%= link_to link_to "Admin room", admin_path, class: 'nav-link' if can?(:use_admin_page, current_user) %>
+        </li>
+
+
       </ul>
     </div>
     <div class="nav-item pull-right">

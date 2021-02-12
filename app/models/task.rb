@@ -8,4 +8,6 @@ class Task < ApplicationRecord
   validates :content, presence: true, length: { minimum: 10}
   validates :status, inclusion: { in: ["not started ","begin", "in progress", "done"],
                                 message: "it is not a status(not started, begin, in progress, done)" }, allow_nil: true
+
 end
+

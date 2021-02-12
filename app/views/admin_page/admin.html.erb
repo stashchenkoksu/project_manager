@@ -1,0 +1,19 @@
+<h1>Statistic</h1>
+<hr>
+
+
+<h3>User details:</h3>
+<ol>
+  <%@users.each do |user| %>
+    <li><h5><%= link_to user.first_name+" "+user.last_name, admin_user_statistic_path(user), class: "text-reset" %></h5>
+    </li>
+  <% end %>
+</ol>
+<hr>
+<h3>Project details</h3>
+<ol>
+  <%@projects.each do |project| %>
+    <li><h5><%= link_to project.name, admin_project_statistic_path(project), class: "text-reset" %></h5>
+    </li>
+  <% end %>
+</ol>

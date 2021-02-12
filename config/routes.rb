@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   end
   resources :users
   resources :teams
+  get '/admin', to: 'admin_page#admin'
+  get '/admin/statistic_user/:id(.:format)', to:'admin_page#user_statistic', as: 'admin_user_statistic'
+  get '/admin/statistic_project/:id(.:format)', to:'admin_page#project_statistic', as: 'admin_project_statistic'
 
   #get ' /comments/:id(.:format)', to: 'tasks/comments', as: 'task_comment'
 
