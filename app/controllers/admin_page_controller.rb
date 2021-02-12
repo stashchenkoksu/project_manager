@@ -1,11 +1,11 @@
 class AdminPageController < ApplicationController
   #load_and_authorize_resource class:  AdminPageController
   def admin
-    @users = User.all
+    @users = User.all.paginate(page: params[:page], per_page: 15)
   end
 
   def project_page
-    @projects = Project.all
+    @projects = Project.all.paginate(page: params[:page], per_page: 10)
   end
 
   def user_statistic

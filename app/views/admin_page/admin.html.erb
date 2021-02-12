@@ -2,9 +2,11 @@
 <%= link_to "Go to project statistic", admin_projects_path, class: 'btn btn-sm btn-outline-secondary' %>
 <hr>
 <h3>User details:</h3>
-<ol>
+<ol class = "col">
+
   <%@users.each do |user| %>
     <li><h5><%= link_to user.first_name+" "+user.last_name, admin_user_statistic_path(user), class: "text-reset" %></h5>
     </li>
   <% end %>
+  <%= will_paginate @users,  renderer: BootstrapPagination::Rails %>
 </ol>
