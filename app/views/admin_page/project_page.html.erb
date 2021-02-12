@@ -1,0 +1,11 @@
+<h1>Statistic</h1>
+<%= link_to "Go to user statistic", admin_path, class: 'btn btn-sm btn-outline-secondary' %>
+<hr>
+
+<h3>Project details</h3>
+<ol>
+  <%@projects.each do |project| %>
+    <li><h5><%= link_to project.name, admin_project_statistic_path(project), class: "text-reset" %></h5>
+    </li>
+  <% end %>
+</ol>

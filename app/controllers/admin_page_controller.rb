@@ -1,12 +1,11 @@
 class AdminPageController < ApplicationController
-  load_and_authorize_resource class:  AdminPageController
+  #load_and_authorize_resource class:  AdminPageController
   def admin
     @users = User.all
+  end
+
+  def project_page
     @projects = Project.all
-    respond_to do |format|
-      format.html
-      format.js
-    end
   end
 
   def user_statistic

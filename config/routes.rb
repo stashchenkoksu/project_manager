@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :users
   resources :teams
   get '/admin', to: 'admin_page#admin'
+  get '/admin/project', to: 'admin_page#project_page', as: 'admin_projects'
   get '/admin/statistic_user/:id(.:format)', to:'admin_page#user_statistic', as: 'admin_user_statistic'
   get '/admin/statistic_project/:id(.:format)', to:'admin_page#project_statistic', as: 'admin_project_statistic'
 
