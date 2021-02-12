@@ -1,0 +1,18 @@
+<h3>Statistic for: <%= @project.name%></h3>
+<hr>
+<p>Amount of task on project: <strong><%= @amount_of_task %></strong> </p>
+<br>
+<p>Complete tasks: <strong><%= @complete_tasks.count %></strong> </p>
+<ol class="p-3 mb-2 bg-success text-white">
+  <%@complete_tasks.each do |task| %>
+    <li class = "m-2 ml-4"><p><%= link_to task.title, task_path(task), class: "text-reset" %></p></li>
+  <% end %>
+</ol>
+<br>
+
+<p>Incomplete tasks: <strong><%= @incomplete_tasks.count %></strong> </p>
+<ol class="p-3 mb-2 bg-danger text-white">
+  <%@incomplete_tasks.each do |task| %>
+    <li class = "m-2 ml-4"><p><%= link_to task.title, task_path(task), class: "text-reset" %></p></li>
+  <% end %>
+</ol>
