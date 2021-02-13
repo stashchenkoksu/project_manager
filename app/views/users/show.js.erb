@@ -1,0 +1,2 @@
+$('#all-tasks').remove()
+$('#tasks-place').html("<ol id='all-tasks'> <%= j render partial: 'task', collection: @tasks %> </ol>")

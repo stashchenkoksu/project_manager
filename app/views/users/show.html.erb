@@ -21,18 +21,15 @@
   <% end %>
 <% end %>
 <hr>
-<%=form_tag( user_path, :method => 'get') do %>
+<%=form_tag( user_path, :method => 'get', remote: true)  do %>
   <%=text_field_tag :search , params[:search] %>
   <%= submit_tag "Search" %>
 <%end %>
 
 <h5>Current user's tasks:</h5>
 
-<ol>
-<%@tasks.each do |task| %>
-    <li><h5><%= link_to task.title, task_path(task), class: "text-reset" %></h5>
-      <p>Project id: <%= task.project_id %></p>
-    </li>
-<% end %>
+<div id='tasks-place'></div>
+<ol id="all-tasks">
+  <%= render partial: 'task', collection: @tasks %>
 </ol>
 <%= will_paginate @tasks,  renderer: BootstrapPagination::Rails %>
