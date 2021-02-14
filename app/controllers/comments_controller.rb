@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource
   before_action :find_commentable
 
   def create
@@ -11,10 +12,6 @@ class CommentsController < ApplicationController
     else
       redirect_to @commentable
     end
-  end
-
-  def new
-    @comment = Comment.new
   end
 
   def destroy

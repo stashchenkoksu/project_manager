@@ -7,7 +7,7 @@ class Ability
     user ||= User.new # guest user (not logged in)
     can :edit_profile, User, id: user.id
     can :manage, :all if user.admin?
-    can :manage, [Project, Task, Team]
+    can :manage, [Project, Task, Team, Comment]
 
     # Define abilities for the passed in user here. For example:
     #
