@@ -25,9 +25,14 @@
   <%=text_field_tag :search , params[:search] %>
   <%= submit_tag "Search" %>
 <%end %>
+<select name="filter_option" onchange="this.form.submit()">
+  <option value="">Pick a Project</option>
+  <% @projects.each do |project| %>
+    <option value="<%= project %>"><%= project %></option>
+  <% end %>
+</select>
 
 <h5>Current user's tasks:</h5>
-
 <div id='tasks-place'></div>
 <ol id="all-tasks">
   <%= render partial: 'task', collection: @tasks %>

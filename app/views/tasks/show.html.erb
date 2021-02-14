@@ -14,9 +14,6 @@
   <dt class="col-sm-3">Estimation: </dt>
   <dd class="col-sm-9"><%= @task.estimation %></dd>
 
-  <dt class="col-sm-3">Image: </dt>
-  <dd class="col-sm-9"><%= @task.image %></dd>
-
   <dt class="col-sm-3">Project:</dt>
   <dd class="col-sm-9"><%= @project_name %></dd>
 
@@ -25,6 +22,11 @@
 
   <dt class="col-sm-3">Task status: </dt>
   <dd class="col-sm-9"><%= @task.status %></dd>
+  <% if @task.image.attached? %>
+    <div style="width: 400px">
+    <dd class="col-sm-9"><%= image_tag(@task.image, style: "width: 100%") %></dd>
+    </div>
+  <% end %>
 </dl>
 
 <%= link_to "Edit", edit_task_path(@task), :class => 'btn btn-outline-info btn-sm' %>
