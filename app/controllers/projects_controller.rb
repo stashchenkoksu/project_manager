@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ProjectsController < ApplicationController
   load_and_authorize_resource
 
@@ -14,8 +16,9 @@ class ProjectsController < ApplicationController
       render :new
     end
   end
+
   def show
-    @project_teams = @project.teams.map{|team| team = team.name}
+    @project_teams = @project.teams.map { |team| team = team.name }
   end
 
   def update
@@ -38,5 +41,3 @@ class ProjectsController < ApplicationController
     params.require(:project).permit(:name, :summary, :start_date, :end_date)
   end
 end
-
-

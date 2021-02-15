@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
   load_and_authorize_resource
   before_action :find_commentable
@@ -21,6 +23,7 @@ class CommentsController < ApplicationController
   end
 
   private
+
   def find_commentable
     if params[:comment_id]
       @commentable = Comment.find_by_id(params[:comment_id])
@@ -29,11 +32,9 @@ class CommentsController < ApplicationController
     elsif params[:task_id]
       @commentable = Task.find_by_id(params[:task_id])
     end
-
   end
 
   def comment_params
-    params.require(:comment).permit( :body)
+    params.require(:comment).permit(:body)
   end
 end
-

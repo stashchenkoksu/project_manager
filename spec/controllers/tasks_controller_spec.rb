@@ -8,17 +8,15 @@ describe TasksController, type: :controller do
     {
       project_id: project.id,
       task: {
-        title: "Name",
+        title: 'Name',
         content: Faker::Lorem.sentence(word_count: 20),
-        start_date: Date.new(2015, 05, 23),
-        due_date: Date.new(2016, 05, 23),
-        status: 'begin',
+        start_date: Date.new(2015, 0o5, 23),
+        due_date: Date.new(2016, 0o5, 23),
+        status: 'begin'
 
       }
     }
   end
-
-
 
   context 'GET :index' do
     before { get :index, params: { project_id: project.id } }
@@ -62,7 +60,7 @@ describe TasksController, type: :controller do
     context 'with invalid params' do
       let(:task_params) do
         { project_id: project.id,
-          task:  { title: 'Name' } }
+          task: { title: 'Name' } }
       end
 
       it 'does not save' do
@@ -80,12 +78,11 @@ describe TasksController, type: :controller do
     let(:params) do
       { project_id: project.id,
         id: task.id,
-        task: { title:"Title" }
-      }
+        task: { title: 'Title' } }
     end
 
     it 'updates project' do
-      expect { subject }.to change { task.reload.title }.from("Name").to("Title")
+      expect { subject }.to change { task.reload.title }.from('Name').to('Title')
     end
 
     it 'redirects to items_path' do
@@ -98,7 +95,7 @@ describe TasksController, type: :controller do
           project_id: project.id,
           id: task.id,
           task: {
-            title: "Title",
+            title: 'Title',
             content: 'lol'
           }
         }
@@ -117,7 +114,7 @@ describe TasksController, type: :controller do
   context 'DELETE :delete' do
     subject { delete :destroy, params: params }
 
-    let(:params) { { id: task.id , project_id: project.id} }
+    let(:params) { { id: task.id, project_id: project.id } }
 
     before { task }
 
@@ -129,6 +126,4 @@ describe TasksController, type: :controller do
       expect(subject).to redirect_to project_tasks_path(project_id: project.id)
     end
   end
-
-
 end

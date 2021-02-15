@@ -6,11 +6,11 @@ describe ProjectsController, type: :controller do
   let(:project_params) do
     {
       project: {
-          name: "Name",
-          summary: Faker::Lorem.sentence(word_count: 20),
-          start_date: Date.new(2015, 05, 23),
-          end_date: Date.new(2016, 05, 23)
-        }
+        name: 'Name',
+        summary: Faker::Lorem.sentence(word_count: 20),
+        start_date: Date.new(2015, 0o5, 23),
+        end_date: Date.new(2016, 0o5, 23)
+      }
     }
   end
 
@@ -55,7 +55,7 @@ describe ProjectsController, type: :controller do
 
     context 'with invalid params' do
       let(:project_params) do
-        { project:  { name: 'Name' } }
+        { project: { name: 'Name' } }
       end
 
       it 'does not save' do
@@ -73,12 +73,12 @@ describe ProjectsController, type: :controller do
     let(:params) do
       {
         id: project.id,
-        project: { name:"Title" }
+        project: { name: 'Title' }
       }
     end
 
     it 'updates project' do
-      expect { subject }.to change { project.reload.name }.from("Name").to("Title")
+      expect { subject }.to change { project.reload.name }.from('Name').to('Title')
     end
 
     it 'redirects to items_path' do
@@ -90,7 +90,7 @@ describe ProjectsController, type: :controller do
         {
           id: project.id,
           project: {
-            name: "Title",
+            name: 'Title',
             summary: 'lol'
           }
         }
@@ -121,6 +121,4 @@ describe ProjectsController, type: :controller do
       expect(subject).to redirect_to projects_path
     end
   end
-
-
 end

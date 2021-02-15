@@ -26,6 +26,7 @@
   <%= submit_tag "Search" %>
 <%end %>
 
+<%unless @projects.nil? %>
 <div class = "mt-4 mb-4">
 <%=form_tag( user_path, :method => 'get')  do %>
 <select name="filter_option" onchange="this.form.submit()">
@@ -37,6 +38,7 @@
 </select>
 <%end %>
 </div>
+<%end %>
 <h5>Current user's tasks:</h5>
 <div id='tasks-place'></div>
 <ol id="all-tasks">

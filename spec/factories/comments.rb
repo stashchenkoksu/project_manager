@@ -4,6 +4,5 @@ FactoryBot.define do
 
     association :user, factory: :user
     association :commentable, factory: :project
-
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TeamsController < ApplicationController
   load_and_authorize_resource
   before_action :set_team_info, only: %i[new edit update create]
@@ -5,6 +7,7 @@ class TeamsController < ApplicationController
   def index
     @teams = Team.all.paginate(page: params[:page], per_page: 10)
   end
+
   def create
     @team = Team.new(team_params)
     if @team.save
@@ -23,8 +26,8 @@ class TeamsController < ApplicationController
   end
 
   def show
-    @team_members = @team.users.map{|user| user = user.first_name + " "+ user.last_name + " - " + user.email }
-    @team_projects = @team.projects.map {|project| project = project.name}
+    @team_members = @team.users.map { |user| user = user.first_name + ' ' + user.last_name + ' - ' + user.email }
+    @team_projects = @team.projects.map { |project| project = project.name}
   end
 
   def destroy

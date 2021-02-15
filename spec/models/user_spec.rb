@@ -6,7 +6,7 @@ RSpec.describe User, type: :model do
       expect(subject).to belong_to(:team)
     end
     it 'has many associations', :aggregate_failures do
-      expect(subject).to  have_many(:tasks)
+      expect(subject).to have_many(:tasks)
     end
   end
 

@@ -3,7 +3,7 @@ FactoryBot.define do
     first_name {Faker::Name.first_name}
     last_name {Faker::Name.last_name }
     admin { false }
-    email {Faker::Internet.email(name: first_name + "_" + last_name)}
+    email {Faker::Internet.email(name: first_name + '_' + last_name)}
     password {Faker::Internet.password(min_length: 6)}
     team
     factory :user_with_tasks do
@@ -16,6 +16,4 @@ FactoryBot.define do
       end
     end
   end
-
 end
-
