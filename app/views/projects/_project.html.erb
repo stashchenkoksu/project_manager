@@ -6,5 +6,7 @@
   <dt class="col-sm-1">Id:</dt>
   <dd class="col-sm-2"><%= project.id%></dd>
 
+  <% if user_signed_in? %>
   <%= link_to "Learn more", project_path(project), :class => "btn btn-outline-secondary btn-sm"%>
+  <% end %>
 </dl>

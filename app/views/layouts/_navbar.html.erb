@@ -4,6 +4,7 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <% if user_signed_in? %>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
@@ -26,6 +27,7 @@
 
       </ul>
     </div>
+      <%end %>
     <div class="nav-item pull-right">
       <% if user_signed_in? %>
         <%= link_to "log out", destroy_user_session_path, method: :delete, class: 'btn btn-sm btn-outline-secondary' %>

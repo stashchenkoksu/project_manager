@@ -1,8 +1,9 @@
 <h2 class="d-flex justify-content-center mt-4 mb-3">All Projects </h2>
 
 <p class="mb-4">Amount of projects: <%= @projects.count %> </p>
+<% if user_signed_in? %>
 <%= link_to "Create new project", new_project_path(@project), :class =>"btn btn-outline-info btn-sm" %>
-
+<%end %>
 <%= render @projects %>
 <div class = 'm-4'>
 <%= will_paginate @projects %>
