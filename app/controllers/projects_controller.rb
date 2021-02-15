@@ -1,6 +1,10 @@
 class ProjectsController < ApplicationController
   load_and_authorize_resource
 
+  def index
+    @projects = Project.all.paginate(page: params[:page], per_page: 10)
+  end
+
   def create
     @project = Project.new(project_params)
 

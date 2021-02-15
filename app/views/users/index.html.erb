@@ -2,4 +2,6 @@
 <p class="mb-4">Amount of users: <%= @users.count %></p>
 <%= render @users %>
 
-
+<div class = 'm-4'>
+  <%= will_paginate @projects %>
+</div>

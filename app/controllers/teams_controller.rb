@@ -2,6 +2,9 @@ class TeamsController < ApplicationController
   load_and_authorize_resource
   before_action :set_team_info, only: %i[new edit update create]
 
+  def index
+    @teams = Team.all.paginate(page: params[:page], per_page: 10)
+  end
   def create
     @team = Team.new(team_params)
     if @team.save

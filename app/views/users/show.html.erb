@@ -25,13 +25,18 @@
   <%=text_field_tag :search , params[:search] %>
   <%= submit_tag "Search" %>
 <%end %>
+
+<div class = "mt-4 mb-4">
+<%=form_tag( user_path, :method => 'get')  do %>
 <select name="filter_option" onchange="this.form.submit()">
   <option value="">Pick a Project</option>
   <% @projects.each do |project| %>
     <option value="<%= project %>"><%= project %></option>
   <% end %>
-</select>
 
+</select>
+<%end %>
+</div>
 <h5>Current user's tasks:</h5>
 <div id='tasks-place'></div>
 <ol id="all-tasks">

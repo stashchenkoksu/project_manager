@@ -4,3 +4,6 @@
 <%= link_to "Create new project", new_project_path(@project), :class =>"btn btn-outline-info btn-sm" %>
 
 <%= render @projects %>
+<div class = 'm-4'>
+<%= will_paginate @projects %>
+</div>

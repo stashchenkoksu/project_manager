@@ -2,3 +2,6 @@
 <p class="mb-4">Amount of teams: <%= @teams.count %></p>
 <%= link_to "Create new team", new_team_path(@team),:class =>"btn btn-outline-info btn-sm" %>
 <%= render @teams %>
+<div class = 'm-4'>
+  <%= will_paginate @teams %>
+</div>
