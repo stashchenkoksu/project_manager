@@ -7,7 +7,7 @@ RSpec.describe Comment, type: :model do
       expect(subject).to belong_to(:user)
     end
     it 'has many associations', :aggregate_failures do
-      expect(subject).to  have_many(:comments)
+      expect(subject).to have_many(:comments)
     end
   end
 

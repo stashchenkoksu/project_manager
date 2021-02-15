@@ -8,7 +8,7 @@ RSpec.describe Project, type: :model do
     end
 
     it 'has belong to associations', :aggregate_failures do
-      expect(subject).to  have_and_belong_to_many(:teams)
+      expect(subject).to have_and_belong_to_many(:teams)
     end
   end
 

@@ -7,7 +7,7 @@ class TasksFilter < ApplicationService
 
   def call
     if @params[:search]
-      @user.tasks.where(["title LIKE?", "%#{@params[:search]}%"])
+      @user.tasks.where(['title LIKE?', "%#{@params[:search]}%"])
     elsif @params[:filter_option]
       @params[:filter_option] == 'all projects' ? @user.tasks : @user.tasks.where(project_id: @params[:filter_option])
     else

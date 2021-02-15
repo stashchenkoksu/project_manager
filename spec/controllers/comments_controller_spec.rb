@@ -3,7 +3,7 @@ require 'rails_helper'
 describe CommentsController, type: :controller do
   login_user
 
-  let(:project) {create :project}
+  let(:project) { create :project }
   let(:comments) { create_list :comment, 5 }
   let(:comment) { create :comment}
   let(:comment_params) do
@@ -35,6 +35,4 @@ describe CommentsController, type: :controller do
       expect { subject }.to change(Comment, :count).by(-1)
     end
   end
-
-
 end

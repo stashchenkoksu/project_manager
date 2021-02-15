@@ -6,7 +6,7 @@ describe TeamsController, type: :controller do
   let(:team_params) do
     {
       team: {
-        name: "Name"
+        name: 'Name'
       }
     }
   end
@@ -70,12 +70,12 @@ describe TeamsController, type: :controller do
     let(:params) do
       {
         id: team.id,
-        team: { name:"Title" }
+        team: { name: 'Title' }
       }
     end
 
     it 'updates team' do
-      expect { subject }.to change { team.reload.name }.from("Name").to("Title")
+      expect { subject }.to change { team.reload.name }.from('Name').to('Title')
     end
 
     it 'redirects to team_path' do
@@ -87,7 +87,7 @@ describe TeamsController, type: :controller do
         {
           id: team.id,
           team: {
-            name: "T"
+            name: 'T'
           }
         }
       end
@@ -117,6 +117,4 @@ describe TeamsController, type: :controller do
       expect(subject).to redirect_to teams_path
     end
   end
-
-
 end

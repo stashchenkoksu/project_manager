@@ -1,5 +1,7 @@
+# frozen_string_literal: true
 
-  class Projects::CommentsController < CommentsController
+module Projects
+  class CommentsController < CommentsController
     before_action :set_commentable
 
     private
@@ -8,3 +10,4 @@
       @commentable = Project.find(params[:project_id])
     end
   end
+end
