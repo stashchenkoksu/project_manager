@@ -1,6 +1,6 @@
 [![View Code](https://img.shields.io/badge/View%20-Code-green)](https://github.com/stashchenkoksu/project_manager)
 
-#About project manager
+# About project manager
 
 ### General description:
 This is a project and task manager. You can create projects and tasks in it. Assign users to teams, assign teams to a project, and track statistics on completed tasks
