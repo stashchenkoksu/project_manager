@@ -29,7 +29,6 @@ test:
   database: db_project_manager_test
 
 
-  mysql2://b1c79717747d74:fd52625b@us-cdbr-east-03.cleardb.com/heroku_063f55ee925199f?reconnect=true
 production:
   adapter: mysql2
   pool: 5
