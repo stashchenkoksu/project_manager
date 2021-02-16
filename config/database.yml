@@ -34,7 +34,7 @@ production:
   pool: 5
   username: b1c79717747d74
   password: fd52625b
-  host: localhost
+  host: us-cdbr-east-03.cleardb.com
   port: 3000
   socket: /var/run/mysqld/mysqld.sock
   database: heroku_063f55ee925199f
