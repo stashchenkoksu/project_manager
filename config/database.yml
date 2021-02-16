@@ -29,9 +29,15 @@ test:
   database: db_project_manager_test
 
 
-
+  mysql2://b1c79717747d74:fd52625b@us-cdbr-east-03.cleardb.com/heroku_063f55ee925199f?reconnect=true
 production:
-  <<: *default
-  database: db_project_manager_prod
+  adapter: mysql2
+  pool: 5
+  username: b1c79717747d74
+  password: fd52625b
+  host: localhost
+  port: 3000
+  socket: /var/run/mysqld/mysqld.sock
+  database: heroku_063f55ee925199f
 
 
