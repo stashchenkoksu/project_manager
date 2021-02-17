@@ -47,12 +47,13 @@ gem 'simple_form'
 gem 'tether-rails'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
-gem 'mysql2', '>= 0.4.4', '< 0.6.0'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 end
 
 group :development, :test do
@@ -82,6 +83,11 @@ group :test do
   gem 'rails-controller-testing'
   gem 'simplecov', require: false
 
+end
+
+group :production do
+  # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
+  gem 'pg'
 end
 
 
