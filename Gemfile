@@ -47,7 +47,7 @@ gem 'simple_form'
 gem 'tether-rails'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
-gem 'mysql2', '>= 0.4.4', '< 0.6.0'
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -57,7 +57,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'factory_bot_rails'
   gem 'faker'
-
+  gem 'mysql2', '>= 0.4.4', '< 0.6.0'
   gem 'rspec-rails'
 end
 
@@ -81,7 +81,10 @@ group :test do
   gem 'chromedriver-helper'
   gem 'rails-controller-testing'
   gem 'simplecov', require: false
+end
 
+group :production do
+  gem 'pg'
 end
 
 
