@@ -4,6 +4,8 @@ class CommentsController < ApplicationController
   load_and_authorize_resource
   before_action :find_commentable
 
+  def show; end
+
   def create
     @comment = @commentable.comments.new(comment_params)
     @comment.username = current_user.first_name + ' ' + current_user.last_name
