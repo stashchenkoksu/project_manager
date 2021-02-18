@@ -57,7 +57,6 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'factory_bot_rails'
   gem 'faker'
-
   gem 'rspec-rails'
 end
 
@@ -70,12 +69,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-group :production do
-  gem 'factory_bot_rails'
-  gem 'faker'
-end
-
-
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
@@ -87,10 +80,3 @@ group :test do
   gem 'rails-controller-testing'
   gem 'simplecov', require: false
 end
-
-
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-
